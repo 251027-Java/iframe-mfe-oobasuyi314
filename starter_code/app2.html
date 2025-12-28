@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>App 2</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 1rem;
+        }
+        button {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <h2>App 2</h2>
+    <button onclick="changeShellColor()">Change Shell Color</button>
+
+    <script>
+        function changeShellColor() {
+            window.parent.postMessage(
+                {
+                    type: "CHANGE_SHELL_COLOR",
+                    color: "#cc0066"
+                },
+                "*"
+            );
+        }
+    </script>
+</body>
+</html>
